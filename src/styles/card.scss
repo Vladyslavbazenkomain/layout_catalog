@@ -13,7 +13,6 @@
   width: $card-width;
 
   display: flex;
-  align-items: center;
   flex-direction: column;
   padding: 32px 16px 16px;
   border: 1px solid $color-light;
@@ -22,15 +21,23 @@
   transition: transform $transition-duration;
 
   &__image {
+    align-self: center;
     display: block;
     width: 160px;
     height: 134px;
     margin-bottom: 40px;
   }
 
+  &__info {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
   &__title {
     margin-bottom: 4px;
-
+    margin-top: 0;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -40,7 +47,7 @@
 
   &__description {
     margin-bottom: 16px;
-
+    margin-top: 0;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -48,10 +55,8 @@
   }
 
   &__review {
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     margin-bottom: 24px;
   }
 
@@ -80,7 +85,7 @@
   &__price-value {
     font-weight: 700;
     font-size: 16px;
-    line-height: 28px;
+    line-height: 18px;
     color: $main-accent-color;
   }
 
@@ -95,30 +100,28 @@
 
     background-color: $blue-accent;
     border-radius: 5px;
-    border: 1px solid $color-light;
+    border: 1px solid $blue-accent;
 
     font-weight: 700;
-    font-size: $font-size-small;
+    font-size: $font-size-base;
     line-height: 16px;
     color: $white;
     text-decoration: none;
     text-transform: uppercase;
     transition:
       color $transition-duration,
-      background-color $transition-duration,
-      border $transition-duration;
+      background-color $transition-duration;
 
     &:hover {
       color: $color-btn-text;
       background-color: $color-btn-background;
-      border: 1px solid $blue-accent;
     }
   }
 
   &:hover {
     transform: scale(1.2);
     z-index: 10;
-    .card__title:hover {
+    .card__title {
       color: $color-title-in-hover;
     }
   }
