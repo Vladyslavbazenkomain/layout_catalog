@@ -1,9 +1,11 @@
 .catalog {
   display: grid;
-  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-template-columns: repeat(1, $card-width);
   gap: $gap-rows $gap-columns;
   padding: 50px 40px;
   justify-content: center;
+
+  @include responsive-grid-columns;
 }
 
 .card {
@@ -11,23 +13,19 @@
   width: $card-width;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   padding: 32px 16px 16px;
   border: 1px solid $color-light;
   border-radius: 5px;
   position: relative;
   transition: transform $transition-duration;
-  &:hover {
-    transform: scale(1.2);
-    z-index: 10;
-  }
 
   &__image {
     display: block;
     width: 160px;
     height: 134px;
-    margin: 0 auto 40px;
+    margin-bottom: 40px;
   }
 
   &__title {
@@ -38,10 +36,6 @@
     line-height: 18px;
     color: $main-accent-color;
     transition: color $transition-duration;
-
-    &:hover {
-      color: $color-title-in-hover;
-    }
   }
 
   &__description {
@@ -101,20 +95,31 @@
 
     background-color: $blue-accent;
     border-radius: 5px;
+    border: 1px solid $color-light;
 
     font-weight: 700;
-    font-size: 14px;
+    font-size: $font-size-small;
     line-height: 16px;
     color: $white;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color $transition-duration background-color $transition-duration;
-    border: $transition-duration;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration,
+      border $transition-duration;
 
     &:hover {
       color: $color-btn-text;
       background-color: $color-btn-background;
       border: 1px solid $blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    .card__title:hover {
+      color: $color-title-in-hover;
     }
   }
 }

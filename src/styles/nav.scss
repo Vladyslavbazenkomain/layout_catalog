@@ -5,7 +5,7 @@
   margin: 0;
 
   &__item {
-    margin-right: 20px;
+    margin-right: $margin-righrt-of-item-in-nav;
     position: relative;
 
     &:last-child {
@@ -17,11 +17,12 @@
     color: $main-accent-color;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 60px;
-    height: 60px;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    line-height: $nav-link-line-height;
+    height: $nav-link-height;
     display: inline-block;
+    transition: color $transition-duration;
 
     &:hover {
       color: $blue-accent;
@@ -36,9 +37,9 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 4px;
+        height: $nav-active-border-height;
         background-color: $blue-accent;
-        border-radius: 8px;
+        border-radius: $nav-active-border-radius;
       }
     }
   }
