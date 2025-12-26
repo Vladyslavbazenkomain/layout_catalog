@@ -1,3 +1,13 @@
+@import 'variables';
+@import 'header';
+@import 'nav';
+@import 'card';
+@import 'stars';
+
+html {
+  font-family: $font-main;
+}
+
 body {
   margin: 0;
 }

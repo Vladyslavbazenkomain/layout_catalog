@@ -1,0 +1,29 @@
+$color-light: #f3f3f3;
+$main-accent-color: #060b35;
+$secondary-color: #616070;
+$font-main: 'Roboto', sans-serif;
+$blue-accent: #00acdc;
+$white: #fff;
+$grid-count: 1;
+$card-width: 200px;
+$transition-duration: 0.3s;
+$color-title-in-hover: #34568b;
+$color-navigation-hover: #00acdc;
+$color-btn-background: #fff;
+$color-btn-text: #00acdc;
+$gap-rows: 46px;
+$gap-columns: 48px;
+
+@mixin responsive-grid-columns {
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
